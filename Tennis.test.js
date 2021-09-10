@@ -40,6 +40,18 @@ describe('Tennis', () => {
     assignPlayer2Score(3);
     expect(tennisObj.currentScore()).toBe('love forty');
   });
+
+  it('should return fifteen all', () => {
+    assignPlayer1Score(1);
+    assignPlayer2Score(1);
+    expect(tennisObj.currentScore()).toBe('fifteen all');
+  });
+
+  it('should return thirty all', () => {
+    assignPlayer1Score(2);
+    assignPlayer2Score(2);
+    expect(tennisObj.currentScore()).toBe('thirty all');
+  });
 });
 
 function assignPlayer1Score(times) {

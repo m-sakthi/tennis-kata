@@ -19,10 +19,10 @@ export default class Tennis {
   }
 
   currentScore() {
-    if (this.player1Score > 0 || this.player2Score > 0) {
+    if (this.player1Score !== this.player2Score) {
       return `${this.scores[this.player1Score]} ${this.scores[this.player2Score]}`;
     }
 
-    return 'love all';
+    return `${this.scores[this.player1Score]} all`;
   }
 }
