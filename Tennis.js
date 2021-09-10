@@ -20,11 +20,8 @@ export default class Tennis {
 
   currentScore() {
     if (this.player1Score !== this.player2Score) {
-      if ((this.player1Score > 3 || this.player2Score > 3) &&
-        Math.abs(this.player1Score - this.player2Score) === 1
-      ) {
-        const advPlayer = this.player1Score > this.player2Score ? 'Player1' : 'Player2';
-        return `${advPlayer} Advantage`;
+      if ((this.player1Score > 3 || this.player2Score > 3) && this.hasAdvantage()) {
+        return `${this.advPlayer()} Advantage`;
       }
 
       return `${this.scores[this.player1Score]} ${this.scores[this.player2Score]}`;
@@ -36,4 +33,13 @@ export default class Tennis {
 
     return `${this.scores[this.player1Score]} all`;
   }
+
+  advPlayer() {
+    return this.player1Score > this.player2Score ? 'Player1' : 'Player2';
+  }
+
+  hasAdvantage() {
+    return (Math.abs(this.player1Score - this.player2Score) === 1);
+  }
+
 }
