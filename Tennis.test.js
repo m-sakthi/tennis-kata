@@ -1,8 +1,8 @@
 import Tennis from './Tennis';
 
-describe('Tennis', () => {
-  let tennisObj;
+let tennisObj;
 
+describe('Tennis', () => {
   beforeEach(() => {
     tennisObj = new Tennis();
   });
@@ -12,20 +12,23 @@ describe('Tennis', () => {
   });
 
   it('should return fifteen love', () => {
-    tennisObj.incrementPlayer1Score();
+    assignPlayer1Score(1);
     expect(tennisObj.currentScore()).toBe('fifteen love');
   });
 
   it('should return thirty love', () => {
-    tennisObj.incrementPlayer1Score();
-    tennisObj.incrementPlayer1Score();
+    assignPlayer1Score(2);
     expect(tennisObj.currentScore()).toBe('thirty love');
   });
 
-  it('should return thirty love', () => {
-    tennisObj.incrementPlayer1Score();
-    tennisObj.incrementPlayer1Score();
-    tennisObj.incrementPlayer1Score();
+  it('should return forty love', () => {
+    assignPlayer1Score(3);
     expect(tennisObj.currentScore()).toBe('forty love');
   });
 });
+
+function assignPlayer1Score(times) {
+  for (let i = 0; i < times; i++) {
+    tennisObj.incrementPlayer1Score();
+  }
+}
