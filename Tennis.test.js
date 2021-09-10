@@ -70,6 +70,18 @@ describe('Tennis', () => {
     assignPlayer2Score(4);
     expect(tennisObj.currentScore()).toBe('Player2 Advantage');
   });
+
+  it('should return Player1 Won', () => {
+    assignPlayer2Score(3);
+    assignPlayer1Score(5);
+    expect(tennisObj.currentScore()).toBe('Player1 Won');
+  });
+
+  it('should return Player2 Won', () => {
+    assignPlayer1Score(3);
+    assignPlayer2Score(5);
+    expect(tennisObj.currentScore()).toBe('Player2 Won');
+  });
 });
 
 function assignPlayer1Score(times) {

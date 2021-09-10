@@ -20,8 +20,12 @@ export default class Tennis {
 
   currentScore() {
     if (this.player1Score !== this.player2Score) {
-      if ((this.player1Score > 3 || this.player2Score > 3) && this.hasAdvantage()) {
-        return `${this.advPlayer()} Advantage`;
+      if ((this.player1Score > 3 || this.player2Score > 3)) {
+        if (this.hasAdvantage()) {
+          return `${this.advPlayer()} Advantage`;
+        }
+
+        return `${this.advPlayer()} Won`;
       }
 
       return `${this.scores[this.player1Score]} ${this.scores[this.player2Score]}`;
