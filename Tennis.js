@@ -23,6 +23,10 @@ export default class Tennis {
       return `${this.scores[this.player1Score]} ${this.scores[this.player2Score]}`;
     }
 
+    if (this.player1Score >= 3 || this.player2Score >= 3) {
+      return 'deuce'
+    }
+
     return `${this.scores[this.player1Score]} all`;
   }
 }

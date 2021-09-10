@@ -52,6 +52,12 @@ describe('Tennis', () => {
     assignPlayer2Score(2);
     expect(tennisObj.currentScore()).toBe('thirty all');
   });
+
+  it('should return deuce', () => {
+    assignPlayer1Score(3);
+    assignPlayer2Score(3);
+    expect(tennisObj.currentScore()).toBe('deuce');
+  });
 });
 
 function assignPlayer1Score(times) {
