@@ -25,10 +25,31 @@ describe('Tennis', () => {
     assignPlayer1Score(3);
     expect(tennisObj.currentScore()).toBe('forty love');
   });
+
+  it('should return love fifteen', () => {
+    assignPlayer2Score(1);
+    expect(tennisObj.currentScore()).toBe('love fifteen');
+  });
+
+  it('should return love thirty', () => {
+    assignPlayer2Score(2);
+    expect(tennisObj.currentScore()).toBe('love thirty');
+  });
+
+  it('should return love forty', () => {
+    assignPlayer2Score(3);
+    expect(tennisObj.currentScore()).toBe('love forty');
+  });
 });
 
 function assignPlayer1Score(times) {
   for (let i = 0; i < times; i++) {
     tennisObj.incrementPlayer1Score();
+  }
+}
+
+function assignPlayer2Score(times) {
+  for (let i = 0; i < times; i++) {
+    tennisObj.incrementPlayer2Score();
   }
 }
